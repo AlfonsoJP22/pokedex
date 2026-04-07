@@ -1,41 +1,37 @@
 package es.etg.prog.pokedex.view;
-
 import java.util.Scanner;
 
 public class PokedexView {
 
-    private Scanner scanner;
+    private final Scanner scanner;
+    
+    public static final String MENU_TITULO = "POKEDEX";
+    public static final String OPCION_1 = "1. Ver lista de pokemon.";
+    public static final String OPCION_2 = "2. Buscar pokemon por ID.";
+    public static final String OPCION_SALIR = "0. Salir.";
+    public static final String PEDIR_OPCION = "Elija una opción: ";
+
+    public static final String OPCION_1_VALOR = "1";
+    public static final String OPCION_2_VALOR = "2";
+    public static final String SALIR_VALOR = "0";
 
     public PokedexView() {
         this.scanner = new Scanner(System.in);
     }
 
-    
-    public void mostrarMenu() {
-        System.out.println("\n--- POKÉDEX ---");
-        System.out.println("1. Listar Pokémons");
-        System.out.println("2. Buscar Pokémon por ID");
-        System.out.println("3. Salir");
-        System.out.print("Selecciona una opción: ");
+    public String mostrarMenu() {
+        return "\n" + MENU_TITULO + "\n" +
+            OPCION_1 + "\n" +
+            OPCION_2 + "\n" +
+            OPCION_SALIR + "\n" +
+            PEDIR_OPCION;
     }
 
-    /**
-     * Lee una cadena de texto desde el teclado.
-     */
     public String leerString() {
         return scanner.nextLine();
     }
 
-    /**
-     * Lee un número entero desde el teclado.
-     * Usamos Integer.parseInt para evitar errores al mezclar lecturas.
-     */
     public int leerEntero() {
-        try {
-            return Integer.parseInt(scanner.nextLine());
-        } catch (NumberFormatException e) {
-            System.out.println("Error: Debes introducir un número válido.");
-            return -1; // Valor de error
-        }
+        return scanner.nextInt();
     }
 }

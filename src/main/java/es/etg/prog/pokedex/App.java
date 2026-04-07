@@ -1,13 +1,14 @@
-package es.etg.prog;
+package es.etg.prog.pokedex;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+import es.etg.prog.pokedex.controller.PokedexController;
+import es.etg.prog.pokedex.view.PokedexView;
+
+public class App {
+    public static void main( String[] args ){
+    
+        PokedexView view = new PokedexView();
+        PokedexController controller  = new PokedexController(view);
+
+        controller.init();
     }
 }
