@@ -9,6 +9,7 @@ public class PokedexView{
     public static final String OPCION_2 = "2. Buscar pokemon por ID.";
     public static final String OPCION_SALIR = "0. Salir.";
     public static final String PEDIR_OPCION = "Elija una opción: ";
+    public static final String MSG_OPCION_INVALIDA = "Opción no válida. Inténtelo de nuevo. %n";
 
     public static final int OPCION_1_VALOR = 1;
     public static final int OPCION_2_VALOR = 2;
@@ -32,6 +33,10 @@ public class PokedexView{
             PEDIR_OPCION);
         
         System.out.print(menu);
+    }
+
+    public void mostrarErrorOpcion() {
+        System.out.print(String.format(MSG_OPCION_INVALIDA));
     }
 
     public String leerString() {

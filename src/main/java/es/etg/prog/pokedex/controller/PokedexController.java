@@ -22,16 +22,16 @@ public class PokedexController {
                 case PokedexView.OPCION_1_VALOR -> ejecutarOpcion1();
                 case PokedexView.OPCION_2_VALOR -> ejecutarOpcion2();
                 case PokedexView.SALIR_VALOR -> salir = true;
-                default -> System.out.println("Opción no válida.");
+                default -> vista.mostrarErrorOpcion();
             }
         }
     }
 
     private void ejecutarOpcion1(){
-        // Aquí iría la llamada al modelo en el futuro
+        // Aquí ira la llamada al modelo en el futuro
     }
 
     private void ejecutarOpcion2() {
-        // Aquí iría la lógica de búsqueda
+        // Aquí irá la lógica de búsqueda
     }
 }
