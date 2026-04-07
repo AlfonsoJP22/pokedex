@@ -1,8 +1,9 @@
 package es.etg.prog.pokedex.view;
 import java.util.Scanner;
 
-public class PokedexView {
+public class PokedexView{
     
+    //Constantes
     public static final String MENU_TITULO = "POKEDEX";
     public static final String OPCION_1 = "1. Ver lista de pokemon.";
     public static final String OPCION_2 = "2. Buscar pokemon por ID.";
@@ -12,14 +13,17 @@ public class PokedexView {
     public static final int OPCION_1_VALOR = 1;
     public static final int OPCION_2_VALOR = 2;
     public static final int SALIR_VALOR = 0;
-
+    
+    //Atributo de instancia
     private final Scanner scanner;
-
-    public PokedexView() {
+    
+    //Constructor con el atributo scanner
+    public PokedexView(){
         this.scanner = new Scanner(System.in);
     }
 
-    public void mostrarMenu() {
+    //Usamos fromat para estructurar las opciones del menu
+    public void mostrarMenu(){
         String menu = String.format("%n%s%n%s%n%s%n%s%n%s",
             MENU_TITULO,
             OPCION_1,
@@ -35,5 +39,6 @@ public class PokedexView {
     }
 
     public int leerEntero() {
-        return Integer.parseInt(leerString());    }
+        return Integer.parseInt(leerString());
+    }
 }

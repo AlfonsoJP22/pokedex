@@ -27,7 +27,7 @@ public class PokedexController {
         }
     }
 
-    private void ejecutarOpcion1() {
+    private void ejecutarOpcion1(){
         // Aquí iría la llamada al modelo en el futuro
     }
 

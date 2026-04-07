@@ -1,7 +1,7 @@
 package es.etg.prog.pokedex.model.dto;
 
 
-public class Pokemon {
+public class Pokemon{
 
     // Atributos
     private final int id;
