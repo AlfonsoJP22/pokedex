@@ -8,28 +8,30 @@ public class PokedexController {
 
     public PokedexController(PokedexView vista){
         this.vista = vista;
-
-        
     }
 
     public void init() {
-        String opcion;
+        boolean salir = false;
+        int opcion;
 
-        do {
-            System.out.print(vista.mostrarMenu());
-            
-            opcion = vista.leerString();
+        while (!salir) {
+            vista.mostrarMenu();
+            opcion = vista.leerEntero();
 
             switch (opcion) {
-                case PokedexView.OPCION_1_VALOR -> System.out.println("Ha elegido la opción 1.");
-                case PokedexView.OPCION_2_VALOR -> System.out.println("Ha elegido la opción 2.");
-                case PokedexView.SALIR_VALOR -> System.out.println("Saliendo del menú...");
+                case PokedexView.OPCION_1_VALOR -> ejecutarOpcion1();
+                case PokedexView.OPCION_2_VALOR -> ejecutarOpcion2();
+                case PokedexView.SALIR_VALOR -> salir = true;
                 default -> System.out.println("Opción no válida.");
-                }
-
-        } while (!opcion.equals(PokedexView.SALIR_VALOR));
+            }
+        }
     }
 
+    private void ejecutarOpcion1() {
+        // Aquí iría la llamada al modelo en el futuro
+    }
 
-    
+    private void ejecutarOpcion2() {
+        // Aquí iría la lógica de búsqueda
+    }
 }

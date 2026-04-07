@@ -2,8 +2,6 @@ package es.etg.prog.pokedex.view;
 import java.util.Scanner;
 
 public class PokedexView {
-
-    private final Scanner scanner;
     
     public static final String MENU_TITULO = "POKEDEX";
     public static final String OPCION_1 = "1. Ver lista de pokemon.";
@@ -11,20 +9,25 @@ public class PokedexView {
     public static final String OPCION_SALIR = "0. Salir.";
     public static final String PEDIR_OPCION = "Elija una opción: ";
 
-    public static final String OPCION_1_VALOR = "1";
-    public static final String OPCION_2_VALOR = "2";
-    public static final String SALIR_VALOR = "0";
+    public static final int OPCION_1_VALOR = 1;
+    public static final int OPCION_2_VALOR = 2;
+    public static final int SALIR_VALOR = 0;
+
+    private final Scanner scanner;
 
     public PokedexView() {
         this.scanner = new Scanner(System.in);
     }
 
-    public String mostrarMenu() {
-        return "\n" + MENU_TITULO + "\n" +
-            OPCION_1 + "\n" +
-            OPCION_2 + "\n" +
-            OPCION_SALIR + "\n" +
-            PEDIR_OPCION;
+    public void mostrarMenu() {
+        String menu = String.format("%n%s%n%s%n%s%n%s%n%s",
+            MENU_TITULO,
+            OPCION_1,
+            OPCION_2,
+            OPCION_SALIR,
+            PEDIR_OPCION);
+        
+        System.out.print(menu);
     }
 
     public String leerString() {
@@ -32,6 +35,5 @@ public class PokedexView {
     }
 
     public int leerEntero() {
-        return scanner.nextInt();
-    }
+        return Integer.parseInt(leerString());    }
 }
